@@ -14,8 +14,8 @@ use App\Http\Controllers\BbsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-// Route::get('/', [BbsController::class, 'index']);
+Route::get('/', [BbsController::class, 'index']);
