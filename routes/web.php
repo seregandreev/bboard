@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BbsController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,22 @@ use App\Http\Controllers\BbsController;
 //     return view('welcome');
 // });
 
+// Главная Страница
 Route::get('/', [BbsController::class, 'index'])->name('index');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Страница пользователя
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Страница добавления товара
+Route::get('/home/add', [HomeController::class, 'showAddBbForm'])->name('bb.add');
+Route::post('/home', [HomeController::class, 'storeBb'])->name('bb.store');
+// Редактирование товара
+Route::get('/home/{bb}/edit', [HomeController::class, 'showEditBbForm'])->name('bb.edit');
+Route::patch('/home/{bb}', [HomeController::class, 'updateBb'])->name('bb.update');
+// Удаление товара
+Route::get('/home/{bb}/delete', [HomeController::class, 'showDeleteBbForm'])->name('bb.delete');
+Route::delete('/home/{bb}', [HomeController::class, 'destroyBb'])->name('bb.destroy');
 
+// Стрница товара
 Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');
