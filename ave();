@@ -1,0 +1,15 @@
+[90m= [39m[34;4mApp\Models\Bb[39;24m {#4685
+    [34mtitle[39m: "[32mТелефон[39m",
+    [34mcontent[39m: "[32mNokia 1100, селиконовые кнопки[39m",
+    [34mprice[39m: [35m100[39m,
+    [34muser_id[39m: [35m1[39m,
+    [34muser[39m: [34;4mApp\Models\User[39;24m {#3740
+      [34mname[39m: "[32madmin[39m",
+      [34memail[39m: "[32madmin@bboard.ru[39m",
+      #[33mpassword[39m: "[32m$2y$10$0G3iEg9AOLwiMORo6JPfO.X7gCvD1CSm2k7mHO8ovNj3AXW8FivjG[39m",
+      [34mupdated_at[39m: "[32m2023-04-20 10:07:54[39m",
+      [34mcreated_at[39m: "[32m2023-04-20 10:07:54[39m",
+      [34mid[39m: [35m1[39m,
+    },
+  }
+
