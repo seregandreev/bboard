@@ -13,15 +13,21 @@
         <nav class="navbar navbar-light bg-light">
             <div class="nav justify-content-start">
                 <a href="{{ route('index') }}" class="navbar-brand mr-auto ">Главная</a>
+                @auth
                 <a href="{{ route('home') }}" class="nav-item nav-link">Мои объявления</a>
+                @endauth
             </div>
             <div class="nav justify-content-end">
+                @guest
                 <a href="{{ route('register') }}" class="nav-item nav-link ">Регистрация</a>
                 <a href="{{ route('login') }}" class="nav-item nav-link">Вход</a>
+                @endguest
+                @auth
                 <form action="{{ route('logout') }}" method="POST" class="form-inline">
                     @csrf
                     <input type="submit" class="btn btn-danger" value="Выход">
                 </form>
+                @endauth
             </div>
         </nav>
         <h1 class="my-3 text-center">Доска объявлений</h1>
